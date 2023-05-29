@@ -1,0 +1,64 @@
+{
+    "albums": [
+      {
+        "name": "Queen",
+        "id": "1kkb8xlG9yssEVsWKiEtAB"
+      },
+      {
+        "name": "Queen II",
+        "id": "0NouBnbXRJKFWzm9LwCW0K"
+      },
+      {
+        "name": "Sheer Heart Attack",
+        "id": "5SBHID8qGG3x52zgoh2ilz"
+      },
+      {
+        "name": "A Night At The Opera",
+        "id": "1GbtB4zTqAsyfZEsm1RZfx"
+      },
+      {
+        "name": "A Day At The Races",
+        "id": "3hfcNo7WWy1Z1ie0nJ8PRy"
+      },
+      {
+          "name": "News Of The World",
+          "id": "7tB40pGzj6Tg0HePj2jWZt"
+        },
+        {
+          "name": "Jazz",
+          "id": "2yuTRGIackbcReLUXOYBqU"
+        },
+        {
+          "name": "The Game",
+          "id": "58alCatewkjNm9IM1Ucj67"
+        },
+        {
+          "name": "Flash Gordon",
+          "id": "4r9kNse038AoF2KfbqPUOS"
+        },
+        {
+          "name": "Hot Space",
+          "id": "6reTSIf5MoBco62rk8T7Q1"
+        },
+        {
+          "name": "The Works",
+          "id": "5RS9xkMuDmeVISqGDBmnSa"
+        },
+        {
+          "name": "A Kind Of Magic",
+          "id": "0pEfDPZko6TnNOgrZMe5nn"
+        },
+        {
+          "name": "The Miracle",
+          "id": "3h6SV9wHJtNL1YswZUJs8V"
+        },
+        {
+          "name": "Innuendo",
+          "id": "5kffKW0sSLo6tkLg1veUGC"
+        },
+        {
+          "name": "Made In Heaven",
+          "id": "391ScNR3xKywWSpfDwP3n0"
+        }
+    ]
+  }

@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "name": "Juan Perez",
+            "password": "abc123"
+        },
+        {
+            "name": "Maria Garcia",
+            "password": "abc123"
+        },
+        {
+            "name": "Pedro Lopez",
+            "password": "abc123"
+        },
+        {
+            "name": "Ana Martinez",
+            "password": "abc123"
+        },
+        {
+            "name": "Luisa Gutierrez",
+            "password": "abc123"
+        }
+    ]
+}
