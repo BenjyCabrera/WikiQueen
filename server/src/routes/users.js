@@ -18,6 +18,14 @@ const validateSigninData = [
   body('password').notEmpty().withMessage('La contraseña es obligatoria'),
 ]
 
+//////// GET USERS ////////
+
+router.get('/', async (req, res) => {
+  const Users = await User.find({}).limit(30).exec();
+  console.log(Users);
+  res.json(Users)
+})
+
 //////// POST SIGNUP ////////
 
 router.post('/signup', validateSignupData, async (req, res) => {
@@ -56,12 +64,12 @@ router.post('/signin', validateSigninData, async (req, res) => {
   try {
     const user = await User.findOne({ name })
     if (!user) {
-      return res.status(401).json({ message: 'Nombre de usuario no encontrado' })
+      return res.status(401).json({ message: 'Usuario o contraseña incorrecta' })
     }
 
     const isUser = await bcrypt.compare(passwordPlainText, user.password)
     if (!isUser) {
-      return res.status(401).json({ message: 'Contraseña incorrecta' })
+      return res.status(401).json({ message: 'CUsuario o contraseña incorrecta' })
     }
 
     const token = user.generateJWT()

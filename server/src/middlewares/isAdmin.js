@@ -4,7 +4,7 @@ module.exports =   function isAdmin(req, res, next) {
     if (user && user.isAdmin) {
       next();
     } else {
-      res.status(401).json({ message: "No autorizado" });
+      res.status(403).json({ message: "Acceso prohibido" });
     }
   }
   

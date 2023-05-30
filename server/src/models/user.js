@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.generateJWT = function () {
   return jwt.sign(
-    pick(this, ['name', 'password', 'isAdmin']),
+    pick(this, ['name','isAdmin']),
     process.env.jwt_privateKey
   )
 }

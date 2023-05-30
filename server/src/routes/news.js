@@ -1,15 +1,23 @@
 const { Router } = require("express");
 const News = require("./../models/news.js");
+const isAuth = require("../middlewares/isAuth.js");
+const isAdmin = require("../middlewares/isAdmin.js");
 const router = Router();
+
+//////// GET NEWS ////////
+
+router.get("/", async (req, res) => {
+  const Newss = await News.find({}).limit(30).exec();
+  console.log(Newss);
+  res.json(Newss);
+});
 
 //////// POST ADDNEWS ////////
 
-router.post("/addnews", async (req, res) => {
-  const { titular, texto, fecha } = req.body;
-
+router.post("/addnews", isAuth,isAdmin, async (req, res) => {
   try {
-    const addnews = await News.create({ titular, texto, fecha });
-    res.setHeader("x-auth-token", titular).json(addnews);
+    const addnews = await News.create(req.body);
+    res.json(addnews);
     console.log("éxito");
   } catch (error) {
     console.log(error);
@@ -19,7 +27,7 @@ router.post("/addnews", async (req, res) => {
 
 //////// DELETE NEWS ////////
 
-router.delete("/delete/:newsId", async (req, res) => {
+router.delete("/delete/:newsId",isAuth,isAdmin, async (req, res) => {
   const { newsId } = req.params;
 
   try {
@@ -40,7 +48,7 @@ router.delete("/delete/:newsId", async (req, res) => {
 
 //////// PUT NEWS ////////
 
-router.put("/update/:newsId", async (req, res) => {
+router.put("/update/:newsId",isAuth,isAdmin, async (req, res) => {
   const { newsId } = req.params;
   const { titular, texto, fecha } = req.body;
 
