@@ -43,7 +43,7 @@ router.post('/signup', validateSignupData, async (req, res) => {
     const newUser = await User.create({name, password})
 
     const token = newUser.generateJWT()
-
+    res.setHeader('access-control-expose-headers', 'x-auth-token')
     res.setHeader('x-auth-token', token).json(newUser)
   } catch (error) {
     console.error(error)
@@ -73,7 +73,7 @@ router.post('/signin', validateSigninData, async (req, res) => {
     }
 
     const token = user.generateJWT()
-
+       res.setHeader('access-control-expose-headers', 'x-auth-token')
     res.setHeader('x-auth-token', token).json({ message: 'Inicio de sesión exitoso' })
   } catch (error) {
     console.error(error)

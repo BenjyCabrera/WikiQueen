@@ -12,9 +12,17 @@ router.get("/", async (req, res) => {
   res.json(Newss);
 });
 
+//////// GET NEWS ID ////////
+
+router.get("/:newsId", async (req, res) => {
+  const { newsId } = req.params;
+  const news = await News.findById(newsId).exec();
+  res.json(news);
+});
+
 //////// POST ADDNEWS ////////
 
-router.post("/addnews", isAuth,isAdmin, async (req, res) => {
+router.post("/addnews",async (req, res) => {
   try {
     const addnews = await News.create(req.body);
     res.json(addnews);
@@ -27,7 +35,7 @@ router.post("/addnews", isAuth,isAdmin, async (req, res) => {
 
 //////// DELETE NEWS ////////
 
-router.delete("/delete/:newsId",isAuth,isAdmin, async (req, res) => {
+router.delete("/delete/:newsId",async (req, res) => {
   const { newsId } = req.params;
 
   try {
